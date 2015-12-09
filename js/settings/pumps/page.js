@@ -43,7 +43,7 @@ $(function() {
       format: 'GetPumps'
     },
     success: function(data) {
-      console.log('data: ', data);
+      //console.log('data: ', data);
       //Pump 1
       $('#type_1').val(data[0]['type']);
       $('#ph_1').val(data[0]['ph']);
@@ -247,10 +247,10 @@ $(function() {
     } else {
       //Put all data in an array
       var array_pump = [];
-      array_pump["1"] = [type = [type_1], ph = [ph_1], description = [description_1], days = [days_1], amount = [amount_1], start = [start_1], end = [end_1], enable = [enable_1]];
-      array_pump["2"] = [type = [type_2], ph = [ph_2], description = [description_2], days = [days_2], amount = [amount_2], start = [start_2], end = [end_2], enable = [enable_2]];
-      array_pump["3"] = [type = [type_3], ph = [ph_3], description = [description_3], days = [days_3], amount = [amount_3], start = [start_3], end = [end_3], enable = [enable_3]];
-      array_pump["4"] = [type = [type_4], ph = [ph_4], description = [description_4], days = [days_4], amount = [amount_4], start = [start_4], end = [end_4], enable = [enable_4]];
+      array_pump["1"] = [type = type_1, ph = ph_1, description = description_1, days = days_1, amount = amount_1, start = start_1, end = end_1, enable = enable_1];
+      array_pump["2"] = [type = type_2, ph = ph_2, description = description_2, days = days_2, amount = amount_2, start = start_2, end = end_2, enable = enable_2];
+      array_pump["3"] = [type = type_3, ph = ph_3, description = description_3, days = days_3, amount = amount_3, start = start_3, end = end_3, enable = enable_3];
+      array_pump["4"] = [type = type_4, ph = ph_4, description = description_4, days = days_4, amount = amount_4, start = start_4, end = end_4, enable = enable_4];
 
       site.ajax({
         param: {

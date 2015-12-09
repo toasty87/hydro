@@ -174,13 +174,14 @@
 			while($i <= 4) {
 				$this->db->update('pump', array(
 					'id'=>$i,
-					'ph'=>$pumps[$i]["ph"],
-					'description'=>$pumps[$i]["description"],
-					'days'=>$pumps[$i]["days"],
-					'amount'=>$pumps[$i]["amount"],
-					'start'=>$pumps[$i]["start"],
-					'end'=>$pumps[$i]["end"],
-					'enable'=>$pumps[$i]["enable"]
+					'type'=>$pumps[$i]['0'],
+					'ph'=>$pumps[$i]['1'],
+					'description'=>$pumps[$i]['2'],
+					'days'=>$pumps[$i]['3'],
+					'amount'=>$pumps[$i]['4'],
+					'start'=>$pumps[$i]['5'],
+					'end'=>$pumps[$i]['6'],
+					'enable'=>$pumps[$i]['7']
 				));
 		    $i++;
 			}

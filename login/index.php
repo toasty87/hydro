@@ -29,13 +29,10 @@
 			if (!empty($user["description"])) {
 				$_SESSION["username"] = $user["description"];
 			}
-			if (!empty($user["client"])) {
-				$_SESSION["client"] = $user["client"];
-			}
 			$_SESSION["auth"] = 1;
 			$_SESSION["last_activity"] = time();
 			$_SESSION["timezone"] = $_POST["timezone"];
-			header("Location: /data/hydro/");
+			header("Location: /data/hydro/settings/pumps/");
 		}
 	}
 ?>

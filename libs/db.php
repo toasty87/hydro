@@ -182,7 +182,7 @@
 					'start'=>$pumps[$i]['5'],
 					'end'=>$pumps[$i]['6'],
 					'enable'=>$pumps[$i]['7']
-				), "id=%s", $id);
+				), "id=%s", $i);
 		    $i++;
 			}
 		}

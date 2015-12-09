@@ -173,7 +173,6 @@
 			$i = 1;
 			while($i <= 4) {
 				$this->db->update('pump', array(
-					'id'=>$i,
 					'type'=>$pumps[$i]['0'],
 					'ph'=>$pumps[$i]['1'],
 					'description'=>$pumps[$i]['2'],
@@ -189,5 +188,38 @@
 
 		public function GetPumps() {
 			return $this->db->query("SELECT * FROM pump");
+		}
+
+		public function GetCameraIP() {
+			$ip = $this->db->query("SELECT ip_address FROM `systems` WHERE id = '1'");
+			return $ip[0]["ip_address"];
+		}
+
+		public function GetSystemInfo() {
+			return $this->db->query("SELECT * FROM `systems`");
+		}
+
+		public function GetSettings() {
+			return $this->db->query("SELECT * FROM `settings`");
+		}
+
+		public function SetSystems($hydro, $pump_1, $pump_2, $cam) {
+			$this->db->update('systems', array('ip_address'=>$hydro), "id=%s", '1');
+			$this->db->update('systems', array('ip_address'=>$pump_1), "id=%s", '2');
+			$this->db->update('systems', array('ip_address'=>$pump_2), "id=%s", '3');
+			$this->db->update('systems', array('ip_address'=>$cam), "id=%s", '4');
+		}
+
+		public function SetSettings($start, $end, $water_full, $water_empty, $water_high, $water_low, $air_high, $air_low) {
+			$this->db->update('settings', array(
+				'start'=>$start,
+				'end'=>$end,
+				'water_full'=>$water_full,
+				'water_empty'=>$water_empty,
+				'water_high'=>$water_high,
+				'water_low'=>$water_low,
+				'air_high'=>$air_high,
+				'air_low'=>$air_low
+			), "id=%s", '1');
 		}
   }

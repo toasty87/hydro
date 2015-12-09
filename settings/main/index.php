@@ -9,8 +9,6 @@
 
 <div class="col-md-12 col-md-offset-0 main">
   <h1 class="page-header">Hydro Main</h1>
-  <table id="list"><tr><td></td></tr></table>
-  <div id="pager"></div>
   <br/>
     <label class="">Lights On</label>
   </br>

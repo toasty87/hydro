@@ -8,7 +8,7 @@
 <?php require_once("../../master/header.php"); ?>
 
 <div class="col-md-12 col-md-offset-0 main">
-<!--  <h1 class="page-header">Chemical Pumps</h1>-->
+  <h1 class="page-header">Chemical Pumps</h1>
   <br/>
     <label class="">Pump 1</label>
   </br>

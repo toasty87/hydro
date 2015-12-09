@@ -1,7 +1,18 @@
+$(function() {
+  site.ajax({
+    param: {
+      format: 'GetCameraIP'
+    },
+    success: function(data) {
+      var ip_address = data;
+    }
+  });
+});
+
 // Set the BaseURL to the URL of your camera
 //Example: var BaseURL = "http://172.21.1.122/";
 
-var BaseURL = "http://[myCamera]/";
+var BaseURL = "http://" + ip_address;
 
 // The two following lines need to be changed if an an AXIS 241S(A)/241Q(A)/240Q/243SA is used:
 

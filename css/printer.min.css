@@ -1,0 +1,1 @@
+.top_contents p:nth-child(odd){background:#e0e0eb;margin:0;line-height:25px}.top_contents p:nth-child(even){background:#c5c5c5;margin:0;line-height:25px}div.top_contents{height:600px;width:100%;border:1px;overflow:auto;background-color:#e0e0eb;font-size:20px}div.inner_contents{display:inline}

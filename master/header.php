@@ -31,7 +31,13 @@
         </div>
         <div id="slidemenu">
          <ul class="nav navbar-nav navbar-right">
-           <li><a href="/hydro/reports/signals">Report</a></li>
+           <li><a href="/hydro/camera">Live Video</a></li>
+           <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports<b class="caret"></b></a>
+           	<ul class="dropdown-menu">
+           		<li><a href="/hydro/reports/temps">Temp Change</a></li>
+              <li><a href="/hydro/reports/ph">PH Change</a></li>
+           	</ul>
+           </li>
            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
            	<ul class="dropdown-menu">
            		<li><a href="/hydro/settings/main/index.php">Hydro Main</a></li>

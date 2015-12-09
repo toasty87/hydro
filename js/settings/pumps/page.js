@@ -46,12 +46,17 @@ $(function() {
       //console.log('data: ', data);
       //Pump 1
       $('#type_1').val(data[0]['type']);
-      $('#ph_1').val(data[0]['ph']);
-      $('#description_1').val(data[0]['description']);
-      $('#days_1').val(data[0]['days']);
-      $('#amount_1').val(data[0]['amount']);
-      $('#start_1').val(data[0]['start']);
-      $('#end_1').val(data[0]['end']);
+      if(data[0]['type'] === '1' || data[0]['type'] === '2') {
+        pump1()
+        $('#ph_1').val(data[0]['ph']);
+      } else if (data[0]['type'] === '3') {
+        pump1();
+        $('#description_1').val(data[0]['description']);
+        $('#days_1').val(data[0]['days']);
+        $('#amount_1').val(data[0]['amount']);
+        $('#start_1').val(data[0]['start']);
+        $('#end_1').val(data[0]['end']);
+      }
       if (data[0]['enable'] == 1) {
         $("#enabled_1").prop("checked", true);
       } else {
@@ -59,12 +64,17 @@ $(function() {
       }
       //Pump 2
       $('#type_2').val(data[1]['type']);
-      $('#ph_2').val(data[1]['ph']);
-      $('#description_2').val(data[1]['description']);
-      $('#days_2').val(data[1]['days']);
-      $('#amount_2').val(data[1]['amount']);
-      $('#start_2').val(data[1]['start']);
-      $('#end_2').val(data[1]['end']);
+      if(data[1]['type'] === '1' || data[1]['type'] === '2') {
+        pump2();
+        $('#ph_2').val(data[1]['ph']);
+      } else if (data[1]['type'] === '3') {
+        pump2();
+        $('#description_2').val(data[1]['description']);
+        $('#days_2').val(data[1]['days']);
+        $('#amount_2').val(data[1]['amount']);
+        $('#start_2').val(data[1]['start']);
+        $('#end_2').val(data[1]['end']);
+      }
       if (data[1]['enable'] == 1) {
         $("#enabled_2").prop("checked", true);
       } else {
@@ -72,12 +82,17 @@ $(function() {
       }
       //Pump 3
       $('#type_3').val(data[2]['type']);
-      $('#ph_3').val(data[2]['ph']);
-      $('#description_3').val(data[2]['description']);
-      $('#days_3').val(data[2]['days']);
-      $('#amount_3').val(data[2]['amount']);
-      $('#start_3').val(data[2]['start']);
-      $('#end_3').val(data[2]['end']);
+      if(data[2]['type'] === '1' || data[2]['type'] === '2') {
+        pump3();
+        $('#ph_3').val(data[2]['ph']);
+      } else if (data[2]['type'] === '3') {
+        pump3();
+        $('#description_3').val(data[2]['description']);
+        $('#days_3').val(data[2]['days']);
+        $('#amount_3').val(data[2]['amount']);
+        $('#start_3').val(data[2]['start']);
+        $('#end_3').val(data[2]['end']);
+      }
       if (data[2]['enable'] == 1) {
         $("#enabled_3").prop("checked", true);
       } else {
@@ -85,12 +100,17 @@ $(function() {
       }
       //Pump 4
       $('#type_4').val(data[3]['type']);
-      $('#ph_4').val(data[3]['ph']);
-      $('#description_4').val(data[3]['description']);
-      $('#days_4').val(data[3]['days']);
-      $('#amount_4').val(data[3]['amount']);
-      $('#start_4').val(data[3]['start']);
-      $('#end_4').val(data[3]['end']);
+      if(data[3]['type'] === '1' || data[3]['type'] === '2') {
+        pump4();
+        $('#ph_4').val(data[3]['ph']);
+      } else if (data[3]['type'] === '3') {
+        pump4();
+        $('#description_4').val(data[3]['description']);
+        $('#days_4').val(data[3]['days']);
+        $('#amount_4').val(data[3]['amount']);
+        $('#start_4').val(data[3]['start']);
+        $('#end_4').val(data[3]['end']);
+      }
       if (data[3]['enable'] == 1) {
         $("#enabled_4").prop("checked", true);
       } else {

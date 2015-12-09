@@ -25,6 +25,6 @@
     <label id="updatestatus"></label>
 </div>
 <!--
-<script src="/hp/js/settings/users/page.js" type="text/javascript"></script>
+<script src="/hydro/js/settings/users/page.js" type="text/javascript"></script>
 -->
 <?php require_once("../../master/footer.php"); ?>

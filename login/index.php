@@ -12,7 +12,7 @@
 	}
 	require_once("../master/master.php");
 	require_once("../libs/db.php");
-	$ini = parse_ini_file("/hp/libs/site.ini");
+	$ini = parse_ini_file("/hydro/libs/site.ini");
 	$revision = $ini["rev"];
 	$_SESSION["auth"] = 0;
 	$_SESSION["user"] = "";
@@ -35,7 +35,7 @@
 			$_SESSION["auth"] = 1;
 			$_SESSION["last_activity"] = time();
 			$_SESSION["timezone"] = $_POST["timezone"];
-			header("Location: /data/hp/");
+			header("Location: /data/hydro/");
 		}
 	}
 ?>
@@ -48,15 +48,15 @@
       <meta name="description" content="">
       <meta name="author" content="Justin W. Packer">
       <title>Login</title>
-        <!--<link rel="icon" href="/hp/img/favicon.png">-->
-        <link rel="stylesheet" href="/hp/bootstrap/css/bootstrap.min.css">
-        <link href="/hp/css/login.min.css" rel="stylesheet">
+        <!--<link rel="icon" href="/hydro/img/favicon.png">-->
+        <link rel="stylesheet" href="/hydro/bootstrap/css/bootstrap.min.css">
+        <link href="/hydro/css/login.min.css" rel="stylesheet">
     </head>
     <body>
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       	<div class="container-fluid">
       		<div class="navbar-header">
-      			<!--<a class="navbar-brand"><img src="/hp/img/dice-logo.png"/></a>-->
+      			<!--<a class="navbar-brand"><img src="/hydro/img/dice-logo.png"/></a>-->
       		</div>
       	</div>
       </div>

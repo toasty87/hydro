@@ -1,109 +1,164 @@
+//Set Default Values;
 var check1 = false;
 var check2 = false;
 var check3 = false;
 var check4 = false;
+var type_1 = '';
+var type_2 = '';
+var type_3 = '';
+var type_4 = '';
+var ph_1 = '';
+var ph_2 = '';
+var ph_3 = '';
+var ph_4 = '';
+var description_1 = '';
+var description_2 = '';
+var description_3 = '';
+var description_4 = '';
+var days_1 = '';
+var days_2 = '';
+var days_3 = '';
+var days_4 = '';
+var amount_1 = '';
+var amount_2 = '';
+var amount_3 = '';
+var amount_4 = '';
+var start_1 = '';
+var start_2 = '';
+var start_3 = '';
+var start_4 = '';
+var end_1 = '';
+var end_2 = '';
+var end_3 = '';
+var end_4 = '';
+var enable_1 = 0;
+var enable_2 = 0;
+var enable_3 = 0;
+var enable_4 = 0;
 
 $(function() {
+  //Insert Current Values
   site.ajax({
     param: {
       format: 'GetPumps'
     },
     success: function(data) {
       console.log('data: ', data);
-      $("#updatestatus").show()
-      $("#updatestatus").text("Pumps updated")
-      $("#updatestatus").fadeOut(1500)
+      //Pump 1
+      $('#type_1').val(data[0]['type']);
+      $('#ph_1').val(data[0]['ph']);
+      $('#description_1').val(data[0]['description']);
+      $('#days_1').val(data[0]['days']);
+      $('#amount_1').val(data[0]['amount']);
+      $('#start_1').val(data[0]['start']);
+      $('#end_1').val(data[0]['end']);
+      if (data[0]['enable'] == 1) {
+        $("#enabled_1").prop("checked", true);
+      } else {
+        $("#enabled_1").prop("checked", false);
+      }
+      //Pump 2
+      $('#type_2').val(data[1]['type']);
+      $('#ph_2').val(data[1]['ph']);
+      $('#description_2').val(data[1]['description']);
+      $('#days_2').val(data[1]['days']);
+      $('#amount_2').val(data[1]['amount']);
+      $('#start_2').val(data[1]['start']);
+      $('#end_2').val(data[1]['end']);
+      if (data[1]['enable'] == 1) {
+        $("#enabled_2").prop("checked", true);
+      } else {
+        $("#enabled_2").prop("checked", false);
+      }
+      //Pump 3
+      $('#type_3').val(data[2]['type']);
+      $('#ph_3').val(data[2]['ph']);
+      $('#description_3').val(data[2]['description']);
+      $('#days_3').val(data[2]['days']);
+      $('#amount_3').val(data[2]['amount']);
+      $('#start_3').val(data[2]['start']);
+      $('#end_3').val(data[2]['end']);
+      if (data[2]['enable'] == 1) {
+        $("#enabled_3").prop("checked", true);
+      } else {
+        $("#enabled_3").prop("checked", false);
+      }
+      //Pump 4
+      $('#type_4').val(data[3]['type']);
+      $('#ph_4').val(data[3]['ph']);
+      $('#description_4').val(data[3]['description']);
+      $('#days_4').val(data[3]['days']);
+      $('#amount_4').val(data[3]['amount']);
+      $('#start_4').val(data[3]['start']);
+      $('#end_4').val(data[3]['end']);
+      if (data[3]['enable'] == 1) {
+        $("#enabled_4").prop("checked", true);
+      } else {
+        $("#enabled_4").prop("checked", false);
+      }
     }
   });
 
 
   $('#update').bind('click', function() {
-    //Set Vairables
-    var type_1 = $('#type_1').val().trim();
-    var type_2 = $('#type_2').val().trim();
-    var type_3 = $('#type_3').val().trim();
-    var type_4 = $('#type_4').val().trim();
+    //Update Vairables
+    type_1 = $('#type_1').val().trim();
+    type_2 = $('#type_2').val().trim();
+    type_3 = $('#type_3').val().trim();
+    type_4 = $('#type_4').val().trim();
 
+    //Pump 1
     if (type_1 === '1' || type_1 === '2') {
-      var ph_1 = $('#ph_1').val().trim();
-      var description_1 = '';
-      var days_1 = '';
-      var amount_1 = '';
-      var start_1 = '';
-      var end_1 = '';
+      ph_1 = $('#ph_1').val().trim();
     } else if (type_1 === '3'){
-      var ph_1 = '';
-      var description_1 = $('#description_1').val().trim();
-      var days_1 = $('#days_1').val().trim();
-      var amount_1 = $('#amount_1').val().trim();
-      var start_1= $('#start_1').val().trim();
-      var end_1= $('#end_1').val().trim();
+      description_1 = $('#description_1').val().trim();
+      days_1 = $('#days_1').val().trim();
+      amount_1 = $('#amount_1').val().trim();
+      start_1= $('#start_1').val().trim();
+      end_1= $('#end_1').val().trim();
     }
+    //Pump 2
     if (type_2 === '1' || type_2 === '2') {
-      var ph_2 = $('#ph_2').val().trim();
-      var description_2 = '';
-      var days_2 = '';
-      var amount_2 = '';
-      var start_2 = '';
-      var end_2 = '';
+      ph_2 = $('#ph_2').val().trim();
     } else if (type_2 === '3'){
-      var ph_2 = '';
-      var description_2 = $('#description_2').val().trim();
-      var days_2 = $('#days_2').val().trim();
-      var amount_2 = $('#amount_2').val().trim();
-      var start_2= $('#start_2').val().trim();
-      var end_2= $('#end_2').val().trim();
+      description_2 = $('#description_2').val().trim();
+      days_2 = $('#days_2').val().trim();
+      amount_2 = $('#amount_2').val().trim();
+      start_2= $('#start_2').val().trim();
+      end_2= $('#end_2').val().trim();
     }
+    //Pump 3
     if (type_3 === '1' || type_3 === '2') {
-      var ph_3 = $('#ph_3').val().trim();
-      var description_3 = '';
-      var days_3 = '';
-      var amount_3 = '';
-      var start_3 = '';
-      var end_3 = '';
+      ph_3 = $('#ph_3').val().trim();
     } else if (type_3 === '3'){
-      var ph_3 = '';
-      var description_3 = $('#description_3').val().trim();
-      var days_3 = $('#days_3').val().trim();
-      var amount_3 = $('#amount_3').val().trim();
-      var start_3= $('#start_3').val().trim();
-      var end_3= $('#end_3').val().trim();
+      description_3 = $('#description_3').val().trim();
+      days_3 = $('#days_3').val().trim();
+      amount_3 = $('#amount_3').val().trim();
+      start_3= $('#start_3').val().trim();
+      end_3= $('#end_3').val().trim();
     }
+    //Pump 4
     if (type_4 === '1' || type_4 === '2') {
-      var ph_4 = $('#ph_4').val().trim();
-      var description_4 = '';
-      var days_4 = '';
-      var amount_4 = '';
-      var start_4 = '';
-      var end_4 = '';
+      ph_4 = $('#ph_4').val().trim();
     } else if (type_4 === '3'){
-      var ph_4 = '';
-      var description_4 = $('#description_4').val().trim();
-      var days_4 = $('#days_4').val().trim();
-      var amount_4 = $('#amount_4').val().trim();
-      var start_4= $('#start_4').val().trim();
-      var end_4= $('#end_4').val().trim();
+      description_4 = $('#description_4').val().trim();
+      days_4 = $('#days_4').val().trim();
+      amount_4 = $('#amount_4').val().trim();
+      start_4= $('#start_4').val().trim();
+      end_4= $('#end_4').val().trim();
     }
 
     if (check1 == true) {
-      var enable_1 = 1;
-    } else {
-      enable_1 = 0;
+      enable_1 = 1;
     }
     if (check2 == true) {
-      var enable_2 = 1;
-    } else {
-      enable_2 = 0;
+      enable_2 = 1;
     }
     if (check3 == true) {
-      var enable_3 = 1;
-    } else {
-      enable_3 = 0;
+      enable_3 = 1;
     }
     if (check4 == true) {
-      var enable_4 = 1;
-    } else {
-      enable_4 = 0;
+      enable_4 = 1;
     }
     //Pump 1
     if (enable_1 === 1 && (type_1 === '1' || type_1 === '2') && ph_1 === '') {
@@ -168,7 +223,7 @@ $(function() {
       $('#updatestatus').text('Start Date required');
       $('#updatestatus').fadeOut(9999);
       $('#start_3').focus();
-      //Pump4
+      //Pump 4
     } else if (enable_4 === 1 && (type_4 === '1' || type_4 === '2') && ph_4 === '') {
       $('#updatestatus').text('PH level required');
       $('#updatestatus').fadeOut(9999);
@@ -212,7 +267,7 @@ $(function() {
     }
   });
 });
-
+//Change Check Value of Check boxes
 function handle1Click(cb) {
 	check1 = cb.checked;
 }
@@ -225,15 +280,14 @@ function handle3Click(cb) {
 function handle4Click(cb) {
 	check4 = cb.checked;
 }
-
+//Add lables and inputs based on Drop Down Menu.
 function pump1() {
   var type = $('#type_1').find('option:selected').val();
-  if (type === '0') {
-    var html = '';
-  } else if (type === '1' || type === '2') {
-    var html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_1\" type=\"text\"></br></div>";
+  var html = '';
+  if (type === '1' || type === '2') {
+    html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_1\" type=\"text\"></br></div>";
   } else if (type === '3') {
-    var html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_1\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_1\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_1\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_1\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_1\" type=\"text\"></br></div>";
+    html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_1\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_1\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_1\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_1\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_1\" type=\"text\"></br></div>";
   }
   $("#div_p_1").html(html);
   $('#start_1').datetimepicker({
@@ -248,12 +302,11 @@ function pump1() {
 
 function pump2() {
   var type = $('#type_2').find('option:selected').val();
-  if (type === '0') {
-    var html = '';
-  } else if (type === '1' || type === '2') {
-    var html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_2\" type=\"text\"></br></div>";
+  var html = '';
+  if (type === '1' || type === '2') {
+    html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_2\" type=\"text\"></br></div>";
   } else if (type === '3') {
-    var html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_2\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_2\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_2\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_2\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_2\" type=\"text\"></br></div>";
+    html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_2\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_2\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_2\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_2\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_2\" type=\"text\"></br></div>";
   }
   $("#div_p_2").html(html);
   $('#start_2').datetimepicker({
@@ -268,12 +321,11 @@ function pump2() {
 
 function pump3() {
   var type = $('#type_3').find('option:selected').val();
-  if (type === '0') {
-    var html = '';
-  } else if (type === '1' || type === '2') {
-    var html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_3\" type=\"text\"></br></div>";
+  var html = '';
+  if (type === '1' || type === '2') {
+    html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_3\" type=\"text\"></br></div>";
   } else if (type === '3') {
-    var html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_3\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_3\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_3\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_3\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_3\" type=\"text\"></br></div>";
+    html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_3\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_3\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_3\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_3\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_3\" type=\"text\"></br></div>";
   }
   $("#div_p_3").html(html);
   $('#start_3').datetimepicker({
@@ -288,12 +340,11 @@ function pump3() {
 
 function pump4() {
   var type = $('#type_4').find('option:selected').val();
-  if (type === '0') {
-    var html = '';
-  } else if (type === '1' || type === '2') {
-    var html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_4\" type=\"text\"></br></div>";
+  var html = '';
+  if (type === '1' || type === '2') {
+    html = "<div><label class=\"fixedwidth\">PH Levels:</label></br><label class=\"fixedwidth\">Level:</label><input id=\"ph_4\" type=\"text\"></br></div>";
   } else if (type === '3') {
-    var html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_4\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_4\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_4\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_4\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_4\" type=\"text\"></br></div>";
+    html = "<div><label>Other Chemicals:</label></br><label class=\"fixedwidth\">Description:</label><input id=\"description_4\" type=\"text\"></br><label class=\"fixedwidth\">How Often:</label><input id=\"days_4\" type=\"text\" placeholder=\"days\"></br><label class=\"fixedwidth\">Amount:</label><input id=\"amount_4\" type=\"text\" placeholder=\"oz\"></br><label class=\"fixedwidth\">Start Date:</label><input id=\"start_4\" type=\"text\"></br><label class=\"fixedwidth\">End Date:</label><input id=\"end_4\" type=\"text\"></br></div>";
   }
   $("#div_p_4").html(html);
   $('#start_4').datetimepicker({

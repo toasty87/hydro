@@ -6,6 +6,6 @@
 *  Controls the php to all viewable webpages.
 *
 ****************************************************************************/
-  //require_once("/hp/libs/functions.php");
+  //require_once("/hydro/libs/functions.php");
 
   date_default_timezone_set('UTC');

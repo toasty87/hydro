@@ -13,7 +13,7 @@ var site = {
   ajax: function (options) {
     var defaults = {
       param: false,
-      url: '/hp/libs/ajax.php?',
+      url: '/hydro/libs/ajax.php?',
       type: 'GET',
       dataType: 'json'
     };

@@ -1,2 +1,2 @@
 <?php
-  header('Location: /hydro/login/');
+  header('Location: /login/');

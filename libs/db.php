@@ -11,7 +11,7 @@
 		public function __construct($database){
 			$ini = parse_ini_file("site.ini");
 			try{
-				$this->db = new MeekroDB($ini["db_urlMaster"], $ini["db_user"], $ini["db_pass"], $database);
+				$this->db = new MeekroDB($ini["db"], $ini["db_user"], $ini["db_pass"], $database);
 			} catch(MeekroDBException $error) {						//SQL Error
 					SQLErrorCatch($error);
 			}

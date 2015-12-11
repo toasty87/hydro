@@ -69,6 +69,6 @@
     <button id="update">Update</button>
     <label id="updatestatus"></label>
 </div>
-<script type="text/javascript" src="/hydro/js/jquery.datetimepicker.min.js"></script>
-<script type="text/javascript" src="/hydro/js/settings/pumps/page.js"></script>
+<script type="text/javascript" src="/js/jquery.datetimepicker.min.js"></script>
+<script type="text/javascript" src="/js/settings/pumps/page.js"></script>
 <?php require_once("../../master/footer.php"); ?>

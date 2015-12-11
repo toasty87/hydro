@@ -24,6 +24,6 @@
   <param name="MediaPassword" value="UserPass">
   <param name="MediaURL" value="axrtsp://IP:9015=/axis-media/media.amp?videocodec=h264">
 </object> 
-<script type="text/javascript" src="/hydro/js/camera/page.js"></script>
+<script type="text/javascript" src="/js/camera/page.js"></script>
 
 <?php require_once("../master/footer.php"); ?>

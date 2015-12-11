@@ -12,9 +12,9 @@
   <table id="list"><tr><td></td></tr></table>
   <div id="pager"></div>
   <br/>
+    <input id="id" type="text">
     <label class="fixedwidth">User:</label>
     <input id="user" type="text">
-    <input id="olduser" type="hidden">
   </br>
     <label class="fixedwidth">Description:</label>
     <input id="description" type="text">
@@ -34,5 +34,5 @@
     <label id="updatestatus"></label>
 </div>
 
-<script src="/hydro/js/settings/users/page.js" type="text/javascript"></script>
+<script src="/js/settings/users/page.js" type="text/javascript"></script>
 <?php require_once("../../master/footer.php"); ?>

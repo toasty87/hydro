@@ -32,7 +32,7 @@
         <div id="slidemenu">
          <ul class="nav navbar-nav navbar-right">
            <li><a href="/camera">Live Video</a></li>
-           <li><a href="/reports">Report/a></li>
+           <li><a href="/reports">Report</a></li>
            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
            	<ul class="dropdown-menu">
            		<li><a href="/settings/main/index.php">Hydro Main</a></li>

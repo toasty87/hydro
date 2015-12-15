@@ -53,7 +53,7 @@
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       	<div class="container-fluid">
       		<div class="navbar-header">
-      			<a class="navbar-brand"><img width="40px" height="40px" src="/img/hydro.png"/></a>
+      			<a class="navbar-brand"><img width="40px" height="30px" src="/img/hydro.png"/></a>
       		</div>
       	</div>
       </div>

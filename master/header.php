@@ -26,7 +26,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="navbar-brand"><img width="40px" height="40px" src="../img/hydro.png"/></a>
+          <a class="navbar-brand"><img width="40px" height="30px" src="../img/hydro.png"/></a>
           <a class="navbar-brand">&nbsp;&nbsp;Welcome <?php session_start(); echo $_SESSION["username"]; ?> </a>
         </div>
         <div id="slidemenu">

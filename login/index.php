@@ -53,7 +53,7 @@
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       	<div class="container-fluid">
       		<div class="navbar-header">
-      			<!--<a class="navbar-brand"><img src="/img/dice-logo.png"/></a>-->
+      			<a class="navbar-brand"><img width="25px" height="25px" src="/img/hydro.png"/></a>
       		</div>
       	</div>
       </div>

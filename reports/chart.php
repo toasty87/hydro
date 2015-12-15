@@ -7,7 +7,7 @@
 *
 ****************************************************************************/
   session_start();
-  require_once("/libs/db.php");
+  require_once("../libs/db.php");
   require_once("constants.php");
 	$hydro = new Hydro("hydro");
   $starttime = $_GET['starttime'];

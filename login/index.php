@@ -32,7 +32,7 @@
 			$_SESSION["auth"] = 1;
 			$_SESSION["last_activity"] = time();
 			$_SESSION["timezone"] = $_POST["timezone"];
-			header("Location: /settings/pumps/");
+			header("Location: /reports/");
 		}
 	}
 ?>

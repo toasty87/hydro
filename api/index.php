@@ -19,9 +19,7 @@
 
 		if(!empty($check_key)) {
       $engine = new HydroEngine("hydro");
-			if ($_REQUEST["f"] == "get_settings") {
-        $xml .= lookUpSettings($engine);
-      } else if ($_REQUEST["f"] == "results") {
+			if ($_REQUEST["f"] == "results") {
         $xml .= results($engine);
       } else if ($_REQUEST["f"] == "heartbeat") {
         $xml .= heartbeat($engine);
@@ -59,27 +57,12 @@
     return "";
   }
 
-  function lookUpSettings($engine) {
-    if(checkVariable("server")) {
-      $server = $_REQUEST['server'];
-
-    } else {
-      return "2</code><codedesc>Required parameter missing";
-    }
-  }
-
   function results($engine) {
-    if(checkVariable("server")) {
-      $server = $_REQUEST['server'];
-      $temp_water = isset($_REQUEST['temp_water']) ? $_REQUEST['temp_water'] : "";
-      $temp_air = isset($_REQUEST['temp_air']) ? $_REQUEST['temp_air'] : "";
-      $ph = isset($_REQUEST['ph']) ? $_REQUEST['ph'] : "";
-
-
-      
-    } else {
-      return "2</code><codedesc>Required parameter missing";
-    }
+    $temp_water = isset($_REQUEST['temp_water']) ? $_REQUEST['temp_water'] : "";
+    $temp_air = isset($_REQUEST['temp_air']) ? $_REQUEST['temp_air'] : "";
+    $ph = isset($_REQUEST['ph']) ? $_REQUEST['ph'] : "";
+    $engine->results($temp_water, $temp_air, $ph);
+    return "0</code><codedesc>success";
   }
 
   function heartbeat($engine) {

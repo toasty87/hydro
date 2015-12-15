@@ -222,4 +222,67 @@
 				'air_low'=>$air_low
 			), "id=%s", '1');
 		}
+
+		public function GetReportGrid($rowlimit, $page, $sidx, $sord, $starttime, $endtime, $localtime) {
+			$time = " inserttime ".chooseDates($starttime, $endtime);
+			$sql = "SELECT COUNT(*) AS count
+			FROM results
+			WHERE $time";
+			$sql = $this->db->query($sql, array(
+				'starttime'=>$starttime,
+				'endtime'=>$endtime,
+				'localtime'=>$localtime
+			));
+
+			$count = $sql[0]["count"];
+			$totalpages = ceil($count/$rowlimit);
+			$start = $rowlimit * $page - $rowlimit;
+
+			$sql = "SELECT DATE_FORMAT(inserttime, %l_dates) AS hour, water, air, ph
+			FROM results
+			WHERE $time
+			ORDER BY ".$sidx." ".$sord."
+			LIMIT $start,$rowlimit";
+
+			try{
+			  $sqlResult = $this->db->query($sql, array(
+					"dates"=>"'%Y-%m-%d %H:00'",
+					'starttime'=>$starttime,
+					'endtime'=>$endtime,
+					'localtime'=>$localtime
+				));
+			} catch(MeekroDBException $error) {						//SQL Error
+			  SQLErrorCatch($error);
+			}
+
+			$sql = array(
+			  "page" => $page,
+			  "total" => $totalpages,
+			  "records" => $count,
+			  "rows" => $sqlResult
+			);
+			return json_encode($sql, JSON_NUMERIC_CHECK);
+		}
+
+		public function GetReportChart($starttime, $endtime, $localtime, $maxlimit) {
+			$time = " inserttime ".chooseDates($starttime, $endtime);
+
+			$sql = "SELECT DATE_FORMAT(inserttime, %l_dates) AS hour, water, air, ph
+			FROM results
+			WHERE $time
+			ORDER BY inserttime DESC
+			LIMIT $maxlimit";
+
+			try{
+			  $sqlResult = $this->db->query($sql, array(
+					"dates"=>"'%Y-%m-%d %H:00'",
+					'starttime'=>$starttime,
+					'endtime'=>$endtime,
+					'localtime'=>$localtime
+				));
+			} catch(MeekroDBException $error) {						//SQL Error
+			  SQLErrorCatch($error);
+			}
+			return json_encode($sqlResult, JSON_NUMERIC_CHECK);
+		}
   }

@@ -20,13 +20,14 @@
 		$timesql = "";
 		if(strlen($endtime) > 0 ) {
 			if ($starttime == "*" && $endtime == "*") {
-				} else if ($starttime == "*") {                 //End Date Selected ONLY
-					$timesql = " <= %s_endtime ";
-				} else if ($endtime == "*") {                 	//Start Date Selected ONLY
-					$timesql = " >= %s_starttime ";
-				} else {                       									//Both Dates Selected
-					$timesql = " BETWEEN %s_starttime AND %s_endtime ";
-				}
+				$timesql = " > %s_localtime - INTERVAL 24 HOUR ";
+			} else if ($starttime == "*") {                 //End Date Selected ONLY
+				$timesql = " <= %s_endtime ";
+			} else if ($endtime == "*") {                 	//Start Date Selected ONLY
+				$timesql = " >= %s_starttime ";
+			} else {                       									//Both Dates Selected
+				$timesql = " BETWEEN %s_starttime AND %s_endtime ";
+			}
 		}
 		return $timesql;
 	}

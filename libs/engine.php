@@ -4,7 +4,7 @@
 	date_default_timezone_set('UTC');
 
 	class Engine{
-		private $servername = "Report Server 1";
+		private $servername = "";
 		private $db;
 
 		public function __construct($database){
@@ -16,10 +16,6 @@
 			}
 		}
 
-    public function getSettings() {
-
-    }
-
     public function heartbeat($server) {
 			$this->db->update('accounts', array(
 			  'heartbeat' => 'CURRENT_TIMESTAMP'
@@ -27,7 +23,12 @@
 
     }
 
-    public function results($server) {
-
+    public function results($temp_water, $temp_air, $ph) {
+			$this->db->insert('results', array(
+				'water'=>$temp_water,
+				'air'=>$temp_air,
+				'ph'=>$ph,
+				'insertttime'=>'CURRENT_TIMESTAMP'
+			));
     }
   }

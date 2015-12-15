@@ -12,7 +12,7 @@
 	}
 	require_once("../master/master.php");
 	require_once("../libs/db.php");
-	$ini = parse_ini_file("/libs/site.ini");
+	$ini = parse_ini_file("../libs/site.ini");
 	$revision = $ini["rev"];
 	$_SESSION["auth"] = 0;
 	$_SESSION["user"] = "";

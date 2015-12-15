@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
           </a>
           <!--<a class="navbar-brand"><img src="/img/dice-logo.png"/></a>-->
-          <a class="navbar-brand">&nbsp;&nbsp;Welcome </a> <?php session_start(); $_SESSION["username"]; ?> </a>
+          <a class="navbar-brand">&nbsp;&nbsp;Welcome </a> <?php session_start(); echo $_SESSION["username"]; ?> </a>
         </div>
         <div id="slidemenu">
          <ul class="nav navbar-nav navbar-right">

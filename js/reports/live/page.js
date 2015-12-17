@@ -36,7 +36,10 @@ function getPH(){
 
 $(function () {
   $('#air').highcharts({
-    chart: { type: 'gauge' },
+    chart: {
+      type: 'gauge',
+      height: 200
+    },
     title: { text: 'Air Tempature' },
     tooltip: { enabled: false },
     pane: {
@@ -112,7 +115,10 @@ $(function () {
 //************************************
 
   $('#water').highcharts({
-    chart: { type: 'gauge' },
+    chart: {
+      type: 'gauge',
+      height: 200
+    },
     title: { text: 'Water Tempature' },
     tooltip: { enabled: false },
     pane: {

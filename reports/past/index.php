@@ -24,5 +24,5 @@
 <script type="text/javascript" src="/js/chart/highcharts.js"></script>
 <script type="text/javascript" src="/js/chart/exporting.js"></script>
 <script type="text/javascript" src="/js/moment.min.js"></script>
-<script type="text/javascript" src="/js/reports/page.js"></script>
+<script type="text/javascript" src="/js/reports/past/page.js"></script>
 <?php require_once("../master/footer.php"); ?>

@@ -7,7 +7,7 @@
 *
 ****************************************************************************/
   session_start();
-  require_once("../libs/db.php");
+  require_once("../../libs/db.php");
 	$hydro = new Hydro("hydro");
 
   $rowlimit=$_GET['rows'];

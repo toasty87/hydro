@@ -10,12 +10,11 @@
   require_once("/libs/functions.php");
 
 	session_start();
-  $xml = "<result>";
+  $xml = "<result><code>";
 
 	if(checkVariable("key")) {
     $key = $_REQUEST['key'];
     $check_key = CheckKey($key);
-    $xml .= "<code>";
 
 		if(!empty($check_key)) {
       $engine = new HydroEngine("hydro");

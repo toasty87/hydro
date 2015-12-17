@@ -26,13 +26,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="navbar-brand"><img width="40px" height="30px" src="../img/hydro.png"/></a>
+          <a class="navbar-brand"><img width="40px" height="30px" src="/img/hydro.png"/></a>
           <a class="navbar-brand">&nbsp;&nbsp;Welcome <?php session_start(); echo $_SESSION["username"]; ?> </a>
         </div>
         <div id="slidemenu">
          <ul class="nav navbar-nav navbar-right">
            <li><a href="/camera">Live Video</a></li>
            <li><a href="/reports">Report</a></li>
+           <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports<b class="caret"></b></a>
+             <ul class="dropdown-menu">
+               <li><a href="/reports/live/index.php">Live</a></li>
+               <li><a href="/reports/past/index.php">Past</a></li>
+             </ul>
+           </li>
            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings<b class="caret"></b></a>
            	<ul class="dropdown-menu">
            		<li><a href="/settings/main/index.php">Hydro Main</a></li>

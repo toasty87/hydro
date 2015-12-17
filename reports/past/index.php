@@ -5,7 +5,7 @@
 *  HTML Layout for Users Setting Page.
 *
 **************************************************************************-->
-<?php require_once("../master/header.php"); ?>
+<?php require_once("../../master/header.php"); ?>
 
 <div class="col-md-12 col-md-offset-0 main">
   <h1 class="page-header">Report</h1>
@@ -25,4 +25,4 @@
 <script type="text/javascript" src="/js/chart/exporting.js"></script>
 <script type="text/javascript" src="/js/moment.min.js"></script>
 <script type="text/javascript" src="/js/reports/past/page.js"></script>
-<?php require_once("../master/footer.php"); ?>
+<?php require_once("../../master/footer.php"); ?>

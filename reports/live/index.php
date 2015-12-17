@@ -9,7 +9,6 @@
 
 <div class="col-md-12 col-md-offset-0 main">
   <h1 class="page-header">Live Data</h1>
-  <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 </div>
 <div class="col-md-4 col-md-offset-0 main">
   <div id="water"></div>

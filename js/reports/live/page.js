@@ -12,7 +12,7 @@ function getFill(){
   );
   */
   $('#fill').val("ON");
-  setTimeout(getWaterTemp, 3000)
+  setTimeout(getFill, 3000)
 }
 
 function getDrain(){
@@ -25,7 +25,7 @@ function getDrain(){
   );
   */
   $('#drain').val("OFF");
-  setTimeout(getWaterTemp, 3000)
+  setTimeout(getDrain, 3000)
 }
 
 function getLights(){
@@ -38,7 +38,7 @@ function getLights(){
   );
   */
   $('#lights').val("ON");
-  setTimeout(getWaterTemp, 3000)
+  setTimeout(getLights, 3000)
 }
 /*
 getWaterTemp();

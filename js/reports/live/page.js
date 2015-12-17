@@ -7,11 +7,11 @@ function getFill(){
   $.get(
     "http://192.168.1.119/api/index.php?f=o1",
     function(data) {
-      $('#fill').val(data);
+      $('#fill').text(data);
     }
   );
   */
-  $('#fill').val("ON");
+  $('#fill').text("ON");
   setTimeout(getFill, 3000)
 }
 
@@ -20,11 +20,11 @@ function getDrain(){
   $.get(
     "http://192.168.1.119/api/index.php?f=o2",
     function(data) {
-      $('#drain').val(data);
+      $('#drain').text(data);
     }
   );
   */
-  $('#drain').val("OFF");
+  $('#drain').text("OFF");
   setTimeout(getDrain, 3000)
 }
 
@@ -33,48 +33,13 @@ function getLights(){
   $.get(
     "http://192.168.1.119/api/index.php?f=o3",
     function(data) {
-      $('#lights').val(data);
+      $('#lights').text(data);
     }
   );
   */
-  $('#lights').val("ON");
+  $('#lights').text("ON");
   setTimeout(getLights, 3000)
 }
-/*
-getWaterTemp();
-getAirTemp();
-getPH();
-
-function getWaterTemp(){
-  $.get(
-    "http://192.168.1.119/api/index.php?f=s1",
-    function(data) {
-      $('#current_temp').val(data);
-    }
-  );
-  setTimeout(getWaterTemp, 3000)
-}
-
-function getAirTemp(){
-  $.get(
-    "http://192.168.1.119/api/index.php?f=s2",
-    function(data) {
-      $('#current_temp').val(data);
-    }
-  );
-  setTimeout(getAirTemp, 3000)
-}
-
-function getPH(){
-  $.get(
-    "http://192.168.1.119/api/index.php?f=s3",
-    function(data) {
-      $('#current_temp').val(data);
-    }
-  );
-  setTimeout(getAirTemp, 3000)
-}
-*/
 
 $(function () {
   $('#air').highcharts({

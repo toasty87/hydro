@@ -20,11 +20,14 @@
   <div id="ph"></div>
 </div>
 <div class="col-md-12 col-md-offset-0 main">
-  <label class="fixedwidth" id="fill">Fill Pump:</label>
+  <label class="fixedwidth">Fill Pump:</label>
+  <label id="fill"></label>
 </br>
-  <label class="fixedwidth" id="drain">Drain Pump:</label>
+  <label class="fixedwidth">Drain Pump:</label>
+  <label id="drain"></label>
 </br>
-  <label class="fixedwidth" id="lights">Lights:</label>
+  <label class="fixedwidth">Lights:</label>
+  <label id="lights"></label>
 </div>
 <script type="text/javascript" src="/js/chart/highcharts.js"></script>
 <script type="text/javascript" src="/js/chart/exporting.js"></script>

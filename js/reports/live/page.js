@@ -6,8 +6,9 @@ function getFill(){
   /*
   $.get(
     "http://192.168.1.119/api/index.php?f=o1",
+    {status : 'GET'},
     function(data) {
-      $('#fill').text(data);
+      $('#fill').val(data);
     }
   );
   */
@@ -19,8 +20,9 @@ function getDrain(){
   /*
   $.get(
     "http://192.168.1.119/api/index.php?f=o2",
+    {status : 'GET'},
     function(data) {
-      $('#drain').text(data);
+      $('#drain').val(data);
     }
   );
   */
@@ -32,8 +34,9 @@ function getLights(){
   /*
   $.get(
     "http://192.168.1.119/api/index.php?f=o3",
+    {status : 'GET'},
     function(data) {
-      $('#lights').text(data);
+      $('#lights').val(data);
     }
   );
   */
@@ -42,6 +45,92 @@ function getLights(){
 }
 
 $(function () {
+  $('#fill').bind('click', function () {
+    var value = $('#fill').val().trim();
+    if (value == 'ON') {
+      /*
+      $.get(
+          "http://192.168.1.119/api/index.php?f=o1",
+            {status : 'ON'},
+          function(data) {
+             $('#fill').val(data);
+          }
+      );
+      */
+      $('#fill').val("OFF");
+    } else if (value == 'OFF') {
+      /*
+      $.get(
+          "http://192.168.1.119/api/index.php?f=o1",
+            {status : 'OFF'},
+          function(data) {
+             $('#fill').val(data);
+          }
+      );
+      */
+      $('#fill').val("ON");
+    }
+  });
+
+  $('#drain').bind('click', function () {
+    var value = $('#drain').val().trim();
+    if (value == 'ON') {
+      /*
+      $.get(
+          "http://192.168.1.119/api/index.php?f=o2",
+            {status : 'ON'},
+          function(data) {
+             $('#drain').val(data);
+          }
+      );
+      */
+      $('#drain').val("OFF");
+    } else if (value == 'OFF') {
+      /*
+      $.get(
+          "http://192.168.1.119/api/index.php?f=o2",
+            {status : 'OFF'},
+          function(data) {
+             $('#drain').val(data);
+          }
+      );
+      */
+      $('#drain').val("ON");
+    }
+  });
+
+  $('#lights').bind('click', function () {
+    var value = $('#lights').val().trim();
+    console.log('value: ', value)
+    if (value == 'ON') {
+      /*
+      $.get(
+          "http://192.168.1.119/api/index.php?f=o3",
+            {status : 'ON'},
+          function(data) {
+             $('#lights').val(data);
+          }
+      );
+      */
+      $('#lights').val("OFF");
+    } else if (value == 'OFF') {
+      /*
+      $.get(
+          "http://192.168.1.119/api/index.php?f=o3",
+            {status : 'OFF'},
+          function(data) {
+             $('#lights').val(data);
+          }
+      );
+      */
+      $('#lights').val("ON");
+    }
+  });
+
+
+
+
+
   $('#air').highcharts({
     chart: {
       type: 'gauge',

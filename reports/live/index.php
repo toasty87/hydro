@@ -21,13 +21,13 @@
 </div>
 <div class="col-md-12 col-md-offset-0 main">
   <label class="fixedwidth">Fill Pump:</label>
-  <label id="fill"></label>
+  <input id="fill" type="button">
 </br>
   <label class="fixedwidth">Drain Pump:</label>
-  <label id="drain"></label>
+  <input id="drain" type="button">
 </br>
   <label class="fixedwidth">Lights:</label>
-  <label id="lights"></label>
+  <input id="lights" type="button">
 </div>
 <script type="text/javascript" src="/js/chart/highcharts.js"></script>
 <script type="text/javascript" src="/js/chart/exporting.js"></script>

@@ -13,7 +13,7 @@ function getFill(){
   );
   */
   $('#fill').text("ON");
-  setTimeout(getFill, 3000)
+  //setTimeout(getFill, 3000)
 }
 
 function getDrain(){
@@ -27,7 +27,7 @@ function getDrain(){
   );
   */
   $('#drain').text("OFF");
-  setTimeout(getDrain, 3000)
+  //setTimeout(getDrain, 3000)
 }
 
 function getLights(){
@@ -41,7 +41,7 @@ function getLights(){
   );
   */
   $('#lights').text("ON");
-  setTimeout(getLights, 3000)
+  //setTimeout(getLights, 3000)
 }
 
 $(function () {
@@ -101,7 +101,6 @@ $(function () {
 
   $('#lights').bind('click', function () {
     var value = $('#lights').val().trim();
-    console.log('value: ', value)
     if (value == 'ON') {
       /*
       $.get(
